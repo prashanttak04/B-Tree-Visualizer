@@ -1,80 +1,107 @@
+/* BTreePlot styles - Light Teal-Cream Theme */
 
 .link-normal {
-  stroke-width: 1;
+  stroke: rgba(13, 148, 136, 0.3) !important;
+  stroke-width: 2px !important;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
 }
 
 .link-blue-highlighted {
-  stroke: blue !important;
-  stroke-width: 1;
+  stroke: #0d9488 !important;
+  stroke-width: 3px !important;
 }
 
 .link-orange-highlighted {
-  stroke: #f49404;
-  stroke-width: 3;
+  stroke: #f97316 !important;
+  stroke-width: 4px !important;
   animation: link-pulse 2s ease infinite;
 }
 
 .key-text-normal {
-  fill: black !important;
-  stroke: black;
-  stroke-width: 1;
+  fill: #0f172a !important; /* High contrast dark text inside white node */
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  stroke: none !important;
+}
+
+.key-text-highlighted {
+  fill: #ea580c !important; /* Orange highlight */
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  stroke: none !important;
+  filter: drop-shadow(0 0 2px rgba(234, 88, 12, 0.3));
 }
 
 .key-separator-normal {
-  stroke: black;
-  stroke-width: 1;
+  stroke: rgba(13, 148, 136, 0.25) !important;
+  stroke-width: 1.5px !important;
+}
+
+.key-separator-highlighted {
+  stroke: #ea580c !important;
+  stroke-width: 2px !important;
 }
 
 .node-normal {
-  fill: white;
-  stroke-width: 2;
+  fill: #ffffff !important; /* Solid white node body */
+  stroke: #0d9488 !important; /* Teal outline */
+  stroke-width: 2px !important;
+  transition: all 0.3s ease;
+}
+
+.node-highlighted {
+  fill: #ffffff !important;
+  stroke: #f97316 !important; /* Orange outline */
+  stroke-width: 3.5px !important;
+  animation: node-pulse 2s ease infinite;
 }
 
 @keyframes link-pulse {
   0% {
-    stroke: #f49404;
-  }
-  20% {
-    stroke: #f49404;
+    stroke: #f97316;
+    stroke-width: 4px;
   }
   50% {
-    stroke: gold;
-  }
-  80% {
-    stroke: #f49404;
+    stroke: #fdba74;
+    stroke-width: 5px;
   }
   100% {
-    stroke: #f49404;
+    stroke: #f97316;
+    stroke-width: 4px;
   }
 }
 
-.key-text-highlighted {
-  fill: blue !important;
-  stroke: blue;
-  stroke-width: 1;
+@keyframes node-pulse {
+  0% {
+    stroke: #f97316;
+  }
+  50% {
+    stroke: #fdba74;
+  }
+  100% {
+    stroke: #f97316;
+  }
 }
 
-.key-separator-highlighted {
-  stroke: blue !important;
-  stroke-width: 2;
+/* Tooltip and bubble messages */
+.message-bubble rect {
+  fill: #ffffff !important;
+  stroke: #0d9488 !important;
+  stroke-width: 1.5px !important;
+  fill-opacity: 0.95 !important;
 }
 
-.node-highlighted {
-  fill: white;
-  stroke-width: 4;
-  stroke: #f49404;
-  animation: link-pulse 2s ease infinite;
-}
-
-.message-bubble {
-  fill: #043464;
-  fill-opacity: 0.8;
-  stroke-width: 0.01;
+.message-bubble polygon {
+  fill: #0d9488 !important;
+  stroke: none !important;
 }
 
 .message-bubble-text {
-  fill: white; 
-  stroke: white; 
-  stroke-width: 0.3; 
-  fill-opacity: 1 !important;
+  fill: #0f172a !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  stroke: none !important;
 }

@@ -1,10 +1,39 @@
+.btree-properties-segment, 
+.btree-balancing-segment {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .btree-properties-segment {
-    border-top: 1px solid grey;
-    padding-top: 5px; 
-  }
+  border-top: 1px solid rgba(13, 148, 136, 0.15);
+  padding-top: 10px;
+  margin-top: 4px;
+}
 
 .btree-balancing-segment {
-    margin-top: 5px;
-    border-top: 1px solid grey; 
-    padding-top: 5px;
-  }
+  margin-top: 10px;
+  border-top: 1px solid rgba(13, 148, 136, 0.15);
+  padding-top: 10px;
+}
+
+/* Span layout and labels styling inside properties segments */
+.btree-properties-segment div,
+.btree-balancing-segment div {
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+}
+
+.btree-properties-segment div span:first-child,
+.btree-balancing-segment div span:first-child {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.btree-properties-segment div span:last-child,
+.btree-balancing-segment div span:last-child {
+  color: #0d9488;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+}

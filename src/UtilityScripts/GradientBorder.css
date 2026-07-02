@@ -1,11 +1,6 @@
 /* This is css for drawing a gradient line border*/
 
-body {
-	margin: 60px;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	grid-gap: 60px;
-}
+
 
 .border {
 	font-size: 1.6rem;

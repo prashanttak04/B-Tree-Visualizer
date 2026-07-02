@@ -38,13 +38,13 @@ export default function BTreePlot({ nodeData, highlightData, plotProps }) {
    * @param nodeData - nodeData
    */
   function NodeWithCalculations(nodeData) {
-    if (nodeData.name.keys) {
+    if (nodeData && nodeData.name && nodeData.name.keys) {
       let [rectWidth, nodeSegmentWidth] = KeySetWidthCalculations(nodeData.name.keys);
       if (rectWidth > biggestNodeWidth) {
         biggestNodeWidth = rectWidth;
       }
     }
-    if (nodeData.hasOwnProperty("children")) {
+    if (nodeData && nodeData.hasOwnProperty("children") && nodeData.children) {
       for (let i = 0; i < nodeData.children.length; i++) {
         NodeWithCalculations(nodeData.children[i]);
       }
@@ -94,7 +94,7 @@ export default function BTreePlot({ nodeData, highlightData, plotProps }) {
   function textWidthCalculations(text) {
     if (!textWidthDict.hasOwnProperty(text)) {
       const span = document.createElement("span");
-      span.style.font = "Arial Narrow";
+      span.style.font = "14px 'Outfit'";
       span.style.visibility = "hidden";
       span.style.position = "absolute";
       span.textContent = text;
@@ -355,6 +355,8 @@ export default function BTreePlot({ nodeData, highlightData, plotProps }) {
             width={rectWidth}
             height={nodeHeight}
             x={-rectWidth / 2}
+            rx={6}
+            ry={6}
             key={String(nodeDatum.name.keys)}
             className={fullHighlight ? "node-highlighted" : "node-normal"}
           />
@@ -446,8 +448,8 @@ export default function BTreePlot({ nodeData, highlightData, plotProps }) {
       collapsible={false}
       scaleExtent={{ max: 5, min: 0.05 }}
       separation={{ nonSiblings: 1, siblings: 1 }}
-      translate={{ x: plotProps.plotWidth / 2, y: plotProps.plotHeight / 4 }}
-      zoom={1.25}
+      translate={{ x: plotProps.plotWidth / 2, y: 50 }}
+      zoom={1.0}
       renderCustomNodeElement={renderBTreeNode}
       pathFunc={bTreePathFunc}
       pathClassFunc={getDynamicPathClass}

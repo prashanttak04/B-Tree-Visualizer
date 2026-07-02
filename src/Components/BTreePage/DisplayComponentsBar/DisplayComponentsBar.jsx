@@ -24,7 +24,7 @@ const DisplayComponentsBar = ({
         value={displayUiComponents}
         onChange={handleDisplayChange}
         aria-label="ui-component-display-toggle"
-        style={{ width: "100%" }}
+        style={{ display: "flex", gap: "12px", border: "none", background: "transparent", justifyContent: "center", width: "100%" }}
       >
         <ToggleButton value={"inputForm"} className="custom-display-toggle-button">
           Modify

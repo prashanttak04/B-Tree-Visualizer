@@ -1,30 +1,42 @@
-// Custom Mui theme, that the MUI UI components are using
-
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
+    mode: 'light',
+    background: {
+      default: '#ffffff',
+      paper: '#ffffff',
+    },
+    primary: {
+      main: '#0d9488', // Premium Teal
+    },
+    secondary: {
+      main: '#f97316', // Orange highlight
+    },
     blue: {
-      main: '#365d83',
+      main: '#0d9488', // Map custom blue calls to teal
     },
     orange: {
-      main: '#f49404',
+      main: '#f97316',
     },
     grey: {
-      main: '#70757a',
+      main: '#64748b',
     },
     lightBlue: {
-      main: '#b4c2d1',
+      main: '#e2e8f0',
     },
     white: {
       main: '#ffffff',
     },
     red: {
-      main: '#FF0000',
+      main: '#ef4444',
     },
     green: {
-      main: '#0AAF30',
+      main: '#10b981',
     },
+  },
+  typography: {
+    fontFamily: "'Outfit', sans-serif",
   },
 });
 

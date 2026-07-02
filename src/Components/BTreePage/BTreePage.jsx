@@ -157,12 +157,19 @@ export default function BTreePage() {
     };
   }, []);
 
-  // effect setting size of B-Tree page as state, for child components to use
+  // effect setting size of B-Tree page as state, using ResizeObserver to handle resizes and layout shifts
   useLayoutEffect(() => {
-    setPlotProps({
-      plotWidth: plotContainerRef.current.offsetWidth,
-      plotHeight: plotContainerRef.current.offsetHeight,
+    if (!plotContainerRef.current) return;
+    const observer = new ResizeObserver(() => {
+      if (plotContainerRef.current) {
+        setPlotProps({
+          plotWidth: plotContainerRef.current.offsetWidth,
+          plotHeight: plotContainerRef.current.offsetHeight,
+        });
+      }
     });
+    observer.observe(plotContainerRef.current);
+    return () => observer.disconnect();
   }, []);
 
   // effect, that operates the frameSequencer

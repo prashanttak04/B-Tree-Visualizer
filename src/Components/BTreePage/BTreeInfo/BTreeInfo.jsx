@@ -24,7 +24,7 @@ const BTreeInfo = ({ loadTreePreset }) => {
         </div>
         <div className="info-section-segment-text">
           <p>
-            The B-Tree<span className="greyed-out-text">[1]</span> is a
+            The B-Tree is a
             self-balancing hierarchical data structure designed for efficient
             indexing and retrieval of data. The nodes within the tree store keys
             and corresponding data pointers, referencing the associated data.
@@ -43,8 +43,7 @@ const BTreeInfo = ({ loadTreePreset }) => {
               <span className="highlighted-text">
                 B-Tree of order <i>p</i>
               </span>{" "}
-              satisfies the following properties{" "}
-              <span className="greyed-out-text">[2][simplified]</span>:
+              satisfies the following properties:
             </p>
 
             <ol className="b-tree-property-list">
@@ -76,26 +75,6 @@ const BTreeInfo = ({ loadTreePreset }) => {
                 </span>
               </li>
             </ol>
-
-            <p>
-              Note that the terminology used for B-Trees often varies. In the
-              original paper<span className="greyed-out-text">[1]</span>, Bayer
-              and McCreight define a B-Tree as part of <b>Class</b> <i>τ</i>(
-              <i>k</i>, <i>h</i>), where <i>h</i> refers to the height of the
-              tree, and <i>k</i> refers to the minimum number of keys in each
-              non-root node. Since then, less ambiguous definitions like the one
-              above have been used more frequently, where B-Tree <b>Order</b> is
-              defined as the maximum number of children per node. Even still,
-              terminology differs. Just to name a few examples from important
-              educational literature: Knuth uses <i>m</i> for order
-              <span className="greyed-out-text">[3]</span>, Cormen calls it{" "}
-              <i>t</i>
-              <span className="greyed-out-text"> [4]</span>, Kemper uses{" "}
-              <i>k</i>
-              <span className="greyed-out-text"> [5]</span>, Elmasri and
-              Navathe, as well as this website, use <i>p</i>
-              <span className="greyed-out-text"> [2]</span>.
-            </p>
           </div>
         </div>
 
@@ -136,122 +115,9 @@ const BTreeInfo = ({ loadTreePreset }) => {
           </p>
         </div>
 
-        <div className="info-section-segment-text">
-          <p>
-            The B-Tree is/was widely used in real-world applications, especially
-            in file and database systems. Even more common are variations of the
-            B-Tree, improving the original concept in different ways.
-          </p>
-        </div>
-        <div className="info-section-segment-top-border">
-          <div className="info-section-segment-title">
-            <p>Variations:</p>
-          </div>
-          <div>
-            <p>
-              The most prevalent variation is the <b>B+-Tree</b>{" "}
-              <span className="greyed-out-text"> [6]</span>. It differentiates
-              itself by having only the leaf nodes store data pointers, while
-              the upper levels are used for indexing only. In addition, leaf
-              nodes are typically organized into an ordered doubly linked list,
-              making sequential accesses and range queries more efficient. Other
-              advantages include better Disk I/O efficiency and better
-              utilization of storage.
-            </p>
-            <p>
-              The <b>B*-Tree</b> is a variation where nodes are filled at least
-              2/3 <span className="greyed-out-text"> [3]</span>. To achieve
-              this, it introduces the mechanism of delayed and combined node
-              splits/merges. This enhances performance on insertions and
-              deletions, as well as reducing tree height and having fuller
-              nodes.
-            </p>
-            <p>
-              The <b>UB-Tree</b> is a less frequently used specialization of the
-              B+-Tree <span className="greyed-out-text"> [7]</span>. It is a
-              multidimensional indexing structure, providing efficiency across
-              all operations but especially on multidimensional range queries.
-            </p>
-            <p>
-              Before deciding on using any of these variations, the specific use
-              case needs to be considered. How advantageous they are, if at all,
-              will largely depend on the access patterns.
-            </p>
-          </div>
-        </div>
 
-        <div className="info-section-segment-top-border">
-          <div className="info-section-segment-title">
-            <p>References:</p>
-          </div>
-          <div>
-            <p>
-              <ol className="bracketed-list">
-                <li>
-                  <div>
-                    R. Bayer and E. McCreight, ‘Organization and Maintenance of
-                    Large Ordered Indices’, in
-                    <i>
-                      &nbsp;Proceedings of the 1970 ACM SIGFIDET (Now SIGMOD)
-                      Workshop on Data Description, Access, and Control
-                    </i>
-                    , Houston, Texas, 1970, pp. 107–141.
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    R. Elmasri and S. Navathe,
-                    <i>&nbsp;Fundamentals of Database Systems</i>, 7th ed. USA:
-                    Addison-Wesley Publishing Company, 2010. pp. 619-622.
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    D. E. Knuth,
-                    <i>
-                      &nbsp;The Art of Computer Programming: Sorting and
-                      Searching
-                    </i>
-                    , 2nd ed., vol. 3. USA: Addison Wesley Longman Publishing
-                    Co., Inc., 1998. pp. 482-489.
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    T. H. Cormen, C. Stein, R. L. Rivest, and C. E. Leiserson,
-                    <i>&nbsp;Introduction to Algorithms</i>, 2nd ed. McGraw-Hill
-                    Higher Education, 2001. pp. 374-377.
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    A. Kemper and A. Eickler,
-                    <i>&nbsp;Datenbanksysteme - Eine Einführung</i>, 6th ed.
-                    Oldenbourg, 2006. pp. 211-215.
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    D. Comer, ‘Ubiquitous B-Tree’,
-                    <i>&nbsp;ACM Comput. Surv.</i>, vol. 11, no. 2, pp. 121–137,
-                    Jun. 1979.
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    R. Bayer, ‘The Universal B-Tree for Multidimensional
-                    Indexing: General Concepts’, in
-                    <i>
-                      &nbsp;Proceedings of the International Conference on
-                      Worldwide Computing and Its Applications{" "}
-                    </i>
-                    , 1997, pp. 198–209.
-                  </div>
-                </li>
-              </ol>
-            </p>
-          </div>
-        </div>
+
+
       </div>
 
       <div className="info-section">
@@ -432,22 +298,22 @@ const BTreeInfo = ({ loadTreePreset }) => {
                 </ol>
               </li>
 
-              </ul>
-              {/* MERGE EXAMPLE BUTTON */}
-              <div className="btree-show-example-button-container">
-                <Button
-                  className="btree-info-button"
-                  variant="text"
-                  size="small"
-                  color="orange"
-                  startIcon={<KeyboardDoubleArrowUpIcon />}
-                  endIcon={<KeyboardDoubleArrowUpIcon />}
-                  onClick={() => loadTreePreset("mergeExample")}
-                >
-                  see merge example
-                </Button>
-              </div>
-              <ul>
+            </ul>
+            {/* MERGE EXAMPLE BUTTON */}
+            <div className="btree-show-example-button-container">
+              <Button
+                className="btree-info-button"
+                variant="text"
+                size="small"
+                color="orange"
+                startIcon={<KeyboardDoubleArrowUpIcon />}
+                endIcon={<KeyboardDoubleArrowUpIcon />}
+                onClick={() => loadTreePreset("mergeExample")}
+              >
+                see merge example
+              </Button>
+            </div>
+            <ul>
 
               <li>
                 If no mergable sibling exists, choose a sibling that contains at

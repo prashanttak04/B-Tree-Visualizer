@@ -8,43 +8,59 @@
   align-items: center;
   justify-content: start;
   padding: 10px 40px;
-  background-color: #e6ebf0;
-  z-index: 99999; /* So that it is always rendered above other components*/
-  box-shadow: 0 2px 6px grey; 
-
+  background: rgba(253, 251, 247, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 99999;
+  border-bottom: 1px solid rgba(13, 148, 136, 0.15);
+  box-shadow: 0 4px 20px rgba(13, 148, 136, 0.06);
   box-sizing: border-box;
 }
 
 .navbar-logo {
   margin-left: auto;
-  margin-right: 00px;
+  margin-right: 0px;
+  filter: drop-shadow(0 0 6px rgba(13, 148, 136, 0.2));
 }
 
 .title {
-  font-weight: bold;
-  font-size: 20px;
-  margin-right: 20px;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  margin-right: 40px;
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .segments {
   display: flex;
+  gap: 8px;
 }
 
 .segment {
-  padding: 10px 20px;
+  padding: 8px 18px;
+  border-radius: 8px;
   cursor: pointer;
+  color: #475569;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
 }
 
 .segment:hover {
-  background-color: #b4c2d1;
+  background-color: rgba(13, 148, 136, 0.05);
+  color: #0d9488;
 }
 
 .segment.selected {
-  background-color: #365d83;
-  color: #fff;
+  background-color: rgba(13, 148, 136, 0.1);
+  color: #0d9488;
+  border-color: rgba(13, 148, 136, 0.25);
+  box-shadow: inset 0 0 8px rgba(13, 148, 136, 0.05);
 }
 
 .segment-text {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.5px;
 }

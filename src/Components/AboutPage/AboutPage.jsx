@@ -21,14 +21,12 @@ const AboutPage = () => {
       <h2>Development</h2>
 
       <div className="development-section">
-        <p>Developed by:</p>
         <p>
-          Prashant Tak
-          <br />
-          <a href="mailto:Prashanttak04@gmail.com">
-            Prashanttak04@gmail.com
+          Developed by: <strong>Prashant Tak</strong> &nbsp;|&nbsp;{" "}
+          <a href="mailto:Prashanttak04@gmail.com">Email</a> &nbsp;|&nbsp;{" "}
+          <a href="https://github.com/prashanttak04/B-Tree-Visualizer" target="_blank" rel="noopener noreferrer">
+            GitHub
           </a>
-          <br />
         </p>
       </div>
     </div>

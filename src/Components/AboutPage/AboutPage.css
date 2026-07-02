@@ -1,63 +1,108 @@
 .about-page-container {
   max-width: 800px;
-  margin-top: 100px;
+  margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+  font-family: 'Outfit', sans-serif;
+  color: #334155;
 }
 
 .development-section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-  gap: 10px;
-  max-width: 500px;
-  width: 100%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 30px auto;
+}
+
+.development-section p {
+  text-align: center !important;
+  color: #475569;
+  font-size: 16px;
 }
 
 .upcoming-section {
   text-align: start;
   max-width: 600px;
   width: 100%;
-  margin: 0 auto;
+  margin: 40px auto 0 auto;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(13, 148, 136, 0.05);
+}
+
+.upcoming-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 0px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(13, 148, 136, 0.15);
+  padding-bottom: 8px;
 }
 
 .upcoming-section ul {
-  list-style-type: disc;
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
 .upcoming-section li {
-  margin-bottom: 10px;
-  padding-left: 20px;
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #334155;
 }
 
-.info-page-container h1 {
-  font-size: 28px;
+.upcoming-section li::before {
+  content: "•";
+  color: #0d9488;
+  font-size: 20px;
+  position: absolute;
+  left: 6px;
+  top: -2px;
+}
+
+.about-page-container h1 {
+  font-size: 36px;
+  font-weight: 800;
   margin-bottom: 20px;
+  background: linear-gradient(135deg, #0f172a, #0d9488);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
-.info-page-container h2 {
+.about-page-container h2 {
   font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
   margin-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.info-page-container p {
-  line-height: 1.6;
-  margin-bottom: 15px;
+.about-page-container p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-align: center;
+  color: #475569;
 }
 
-.info-page-container a {
-  color: #007bff;
+.about-page-container a {
+  color: #0d9488;
   text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
-.info-page-container a:hover {
+.about-page-container a:hover {
+  color: #0f766e;
   text-decoration: underline;
 }
